@@ -8,7 +8,7 @@ class ButtonPanel extends React.Component {
     };
   }
 
-  renderButtons(name) {
+  renderButtons(name, buttonStyle) {
     return (
       <Button
         value={name}
@@ -21,31 +21,31 @@ class ButtonPanel extends React.Component {
     return (
       <div className="button-panel">
         <div className="number-panel">
-          <div className="number">
+          <div className="row">
             {this.renderButtons('AC')}
             {this.renderButtons('+/-')}
             {this.renderButtons('%')}
             {this.renderButtons('÷')}
           </div>
-          <div className="number">
+          <div className="row">
             {this.renderButtons('7')}
             {this.renderButtons('8')}
             {this.renderButtons('9')}
             {this.renderButtons('x')}
           </div>
-          <div className="number-row">
+          <div className="row">
             {this.renderButtons('4')}
             {this.renderButtons('5')}
             {this.renderButtons('6')}
             {this.renderButtons('-')}
           </div>
-          <div className="number-row">
+          <div className="row">
             {this.renderButtons('1')}
             {this.renderButtons('2')}
             {this.renderButtons('3')}
             {this.renderButtons('+')}
           </div>
-          <div className="number-row">
+          <div className="row">
             {this.renderButtons('0')}
             {this.renderButtons('.')}
             {this.renderButtons('=')}

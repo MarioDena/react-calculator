@@ -11,9 +11,9 @@ class Button extends React.Component {
 
   render() {
     const { value } = this.props;
-    const { classStyle } = this.props;
+    const { buttonStyle } = this.props;
     return (
-      <button className={classStyle} type="submit">
+      <button className={buttonStyle} type="submit">
         {value}
       </button>
     );
@@ -22,12 +22,12 @@ class Button extends React.Component {
 
 Button.propTypes = {
   value: PropTypes.string,
-  classStyle: PropTypes.string,
+  buttonStyle: PropTypes.string,
 };
 
 Button.defaultProps = {
   value: '0',
-  classStyle: 'button-item',
+  buttonStyle: 'button',
 };
 
 export default Button;
