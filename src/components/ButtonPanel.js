@@ -8,11 +8,14 @@ class ButtonPanel extends React.Component {
     };
   }
 
-  renderButtons(name, style) {
+  renderButtons(name, style, color, wide) {
+    const fColor = color ? color: 'orange';
     return (
       <Button
         value={name}
         buttonStyle={style}
+        color={fColor}
+        wide={wide}
         event={this.state}
       />
     );
@@ -23,33 +26,33 @@ class ButtonPanel extends React.Component {
       <div className="button-panel">
         <div className="number-panel">
           <div className="row">
-            {this.renderButtons('AC', 'button orangeButton')}
-            {this.renderButtons('+/-', 'button orangeButton')}
-            {this.renderButtons('%', 'button orangeButton')}
-            {this.renderButtons('÷', 'button orangeButton')}
+            {this.renderButtons('AC', 'button', 'white')}
+            {this.renderButtons('+/-', 'button', 'white')}
+            {this.renderButtons('%', 'button', 'white')}
+            {this.renderButtons('÷', 'button')}
           </div>
           <div className="row">
-            {this.renderButtons('7')}
-            {this.renderButtons('8')}
-            {this.renderButtons('9')}
-            {this.renderButtons('x', 'button orangeButton')}
+            {this.renderButtons('7', 'button', 'white')}
+            {this.renderButtons('8', 'button', 'white')}
+            {this.renderButtons('9', 'button', 'white')}
+            {this.renderButtons('x', 'button')}
           </div>
           <div className="row">
-            {this.renderButtons('4')}
-            {this.renderButtons('5')}
-            {this.renderButtons('6')}
-            {this.renderButtons('-', 'button orangeButton')}
+            {this.renderButtons('4', 'button', 'white')}
+            {this.renderButtons('5', 'button', 'white')}
+            {this.renderButtons('6', 'button', 'white')}
+            {this.renderButtons('-', 'button')}
           </div>
           <div className="row">
-            {this.renderButtons('1')}
-            {this.renderButtons('2')}
-            {this.renderButtons('3')}
-            {this.renderButtons('+', 'button orangeButton')}
+            {this.renderButtons('1', 'button', 'white')}
+            {this.renderButtons('2', 'button', 'white')}
+            {this.renderButtons('3', 'button', 'white')}
+            {this.renderButtons('+', 'button')}
           </div>
           <div className="row">
-            {this.renderButtons('0', 'button bigbutton')}
-            {this.renderButtons('.', 'button')}
-            {this.renderButtons('=', 'button orangeButton')}
+            {this.renderButtons('0', 'button', 'white', true)}
+            {this.renderButtons('.', 'button', 'white')}
+            {this.renderButtons('=', 'button')}
           </div>
         </div>
       </div>
