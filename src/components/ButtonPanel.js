@@ -9,7 +9,7 @@ class ButtonPanel extends React.Component {
   }
 
   renderButtons(name, style, color, wide) {
-    // eslint-disble nextline no-unneeded-ternary
+    // eslint-disable-next-line no-unneeded-ternary
     const fColor = color ? color : 'orange';
     return (
       <Button
