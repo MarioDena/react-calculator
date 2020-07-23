@@ -19,6 +19,7 @@ class ButtonPanel extends React.Component {
         event={this.state}
       />
     );
+   
   }
 
   render() {
