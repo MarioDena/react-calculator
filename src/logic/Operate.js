@@ -7,19 +7,21 @@ const operate = (numberOne, numberTwo, operation) => {
   switch (operation) {
     case '+':
       result = first.plus(second);
-    break;
+      break;
     case '-':
       result = first.minus(second);
-    break;
+      break;
     case 'x':
       result = first.times(second);
-    break;
+      break;
     case '÷':
       result = first.div(second);
-    break;
+      break;
     case '%':
       result = first.times(second.div(100));
-    break;
+      break;
+    default: 
+      result = 0;
   }
   return result.toString();
 };
