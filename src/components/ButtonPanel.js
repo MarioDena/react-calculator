@@ -9,7 +9,8 @@ class ButtonPanel extends React.Component {
   }
 
   renderButtons(name, style, color, wide) {
-    const fColor = color ? color: 'orange';
+    // eslint-disble nextline no-unneeded-ternary
+    const fColor = color ? color : 'orange';
     return (
       <Button
         value={name}
@@ -19,7 +20,6 @@ class ButtonPanel extends React.Component {
         event={this.state}
       />
     );
-   
   }
 
   render() {

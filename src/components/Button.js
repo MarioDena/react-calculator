@@ -12,7 +12,7 @@ class Button extends React.Component {
   render() {
     const { value } = this.props;
     const { buttonStyle } = this.props;
-    const { color } = this.props; 
+    const { color } = this.props;
     const { wide } = this.props;
 
     return (
