@@ -8,6 +8,7 @@ class ButtonPanel extends React.Component {
     };
   }
 
+// eslint-disable-next-line no-unused-vars
   renderButtons(name, buttonStyle) {
     return (
       <Button
