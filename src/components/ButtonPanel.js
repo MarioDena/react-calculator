@@ -8,10 +8,11 @@ class ButtonPanel extends React.Component {
     };
   }
 
-  renderButtons(name, buttonStyle) {
+  renderButtons(name, style) {
     return (
       <Button
         value={name}
+        buttonStyle={style}
         event={this.state}
       />
     );
@@ -22,33 +23,33 @@ class ButtonPanel extends React.Component {
       <div className="button-panel">
         <div className="number-panel">
           <div className="row">
-            {this.renderButtons('AC')}
-            {this.renderButtons('+/-')}
-            {this.renderButtons('%')}
-            {this.renderButtons('÷')}
+            {this.renderButtons('AC', 'button orangeButton')}
+            {this.renderButtons('+/-', 'button orangeButton')}
+            {this.renderButtons('%', 'button orangeButton')}
+            {this.renderButtons('÷', 'button orangeButton')}
           </div>
           <div className="row">
             {this.renderButtons('7')}
             {this.renderButtons('8')}
             {this.renderButtons('9')}
-            {this.renderButtons('x')}
+            {this.renderButtons('x', 'button orangeButton')}
           </div>
           <div className="row">
             {this.renderButtons('4')}
             {this.renderButtons('5')}
             {this.renderButtons('6')}
-            {this.renderButtons('-')}
+            {this.renderButtons('-', 'button orangeButton')}
           </div>
           <div className="row">
             {this.renderButtons('1')}
             {this.renderButtons('2')}
             {this.renderButtons('3')}
-            {this.renderButtons('+')}
+            {this.renderButtons('+', 'button orangeButton')}
           </div>
           <div className="row">
-            {this.renderButtons('0')}
-            {this.renderButtons('.')}
-            {this.renderButtons('=')}
+            {this.renderButtons('0', 'button bigbutton')}
+            {this.renderButtons('.', 'button')}
+            {this.renderButtons('=', 'button orangeButton')}
           </div>
         </div>
       </div>
