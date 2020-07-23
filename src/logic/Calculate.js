@@ -1,4 +1,4 @@
-import operate from './operate';
+import operate from './Operate';
 
 const calculate = ({ total, next, operation }, buttonName) => {
   const operations = ['+', '-', 'x', '÷', '%'];
