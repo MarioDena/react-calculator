@@ -20,7 +20,7 @@ const operate = (numberOne, numberTwo, operation) => {
     case '%':
       result = first.times(second.div(100));
       break;
-    default: 
+    default:
       result = 0;
   }
   return result.toString();
