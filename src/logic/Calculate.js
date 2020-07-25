@@ -14,7 +14,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
   } else if (buttonName === 'AC') {
     total = null;
   } else if (buttonName === '+/-') {
-    total = (total || next) * -1;
+    total = (next || total) * -1;
   }
   next = null;
   return { total, next, operation };
