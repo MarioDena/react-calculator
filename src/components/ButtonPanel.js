@@ -24,22 +24,24 @@ class ButtonPanel extends React.Component {
   render() {
     return (
       <div className="button-panel">
-        {buttons.map((row, i) => (
-          <div key={row[0]}>
-            {row.map((b, j) => (
-              <Button
-                key={b}
-                buttonStyle='button'
-                name={b}
-                value={b}
-                {...(b === '0' && { wide: true })}
-                {...(i < 4 && j < 3 && { color: 'lightgrey' })}
-                {...(i === 4 && j < 2 && { color: 'lightgrey' })}
-                clickHandler={this.handleClick}
-              />
-            ))}
-          </div>
-        ))}
+         <div className="number-panel">
+          {buttons.map((row, i) => (
+            <div className="row">
+              {row.map((b, j) => (
+                <Button
+                  key={b}
+                  buttonStyle='button'
+                  name={b}
+                  value={b}
+                  {...(b === '0' && { wide: true })}
+                  {...(i < 4 && j < 3 && { color: 'lightgrey' })}
+                  {...(i === 4 && j < 2 && { color: 'lightgrey' })}
+                  clickHandler={this.handleClick}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
