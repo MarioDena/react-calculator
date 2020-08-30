@@ -16,9 +16,11 @@ A calculator built with create-react-app.
 
   This project consists of building a simple and functional calculator using react components and prop-types.
   
+# Live demo https://react-calc--mariodena.herokuapp.com/
+
 # Validations
 
--Stickler
+-Github Workflows
 
 # Get Started
 
