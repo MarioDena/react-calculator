@@ -13,14 +13,11 @@ class Button extends React.Component {
   }
 
   render() {
-    const { name, color, wide } = this.props;
-    const style = { backgroundColor: color };
-    if (wide) style.width = 136;
+    const {buttonStyle, name, color, wide } = this.props;
 
     return (
       <button
-        type="button"
-        style={style}
+        className={`${buttonStyle} ${color} ${wide}`}
         onClick={this.handleClick}
       >
         {name}

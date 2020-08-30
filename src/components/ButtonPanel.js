@@ -29,6 +29,7 @@ class ButtonPanel extends React.Component {
             {row.map((b, j) => (
               <Button
                 key={b}
+                buttonStyle='button'
                 name={b}
                 value={b}
                 {...(b === '0' && { wide: true })}
