@@ -33,7 +33,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { next, total, operation } = this.state;
+    const { next, total } = this.state;
     return (
       <div className="App">
         <Display value={(next || total || 0).toString()}/>
