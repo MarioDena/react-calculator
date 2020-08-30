@@ -36,7 +36,7 @@ class App extends React.Component {
     const { next, total, operation } = this.state;
     return (
       <div className="App">
-        <Display value={(next || total || 0).toString()} op={operation} />
+        <Display value={(next || total || 0).toString()}/>
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );

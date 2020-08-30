@@ -34,8 +34,8 @@ class ButtonPanel extends React.Component {
                   name={b}
                   value={b}
                   {...(b === '0' && { wide: true })}
-                  {...(i < 4 && j < 3 && { color: 'lightgrey' })}
-                  {...(i === 4 && j < 2 && { color: 'lightgrey' })}
+                  {...(i < 4 && j < 3 && { color: 'white' })}
+                  {...(i === 4 && j < 2 && { color: 'white' })}
                   clickHandler={this.handleClick}
                 />
               ))}
