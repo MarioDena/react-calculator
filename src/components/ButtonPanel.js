@@ -1,64 +1,51 @@
 import React from 'react';
 import Button from './Button';
+import PropTypes from 'prop-types';
+
+const buttons = [
+  ['AC', '+/-', '%', '÷'],
+  ['7', '8', '9', 'x'],
+  ['4', '5', '6', '-'],
+  ['1', '2', '3', '+'],
+  ['0', '.', '='],
+];
 
 class ButtonPanel extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  renderButtons(name, style, color, wide) {
-    // eslint-disable-next-line no-unneeded-ternary
-    const fColor = color ? color : 'orange';
-    return (
-      <Button
-        value={name}
-        buttonStyle={style}
-        color={fColor}
-        wide={wide}
-        event={this.state}
-      />
-    );
+  handleClick(buttonName) {
+    const { clickHandler } = this.props;
+    clickHandler(buttonName);
   }
 
   render() {
     return (
       <div className="button-panel">
-        <div className="number-panel">
-          <div className="row">
-            {this.renderButtons('AC', 'button', 'white')}
-            {this.renderButtons('+/-', 'button', 'white')}
-            {this.renderButtons('%', 'button', 'white')}
-            {this.renderButtons('÷', 'button')}
+        {buttons.map((row, i) => (
+          <div key={row[0]}>
+            {row.map((b, j) => (
+              <Button
+                key={b}
+                name={b}
+                value={b}
+                {...(b === '0' && { wide: true })}
+                {...(i < 4 && j < 3 && { color: 'lightgrey' })}
+                {...(i === 4 && j < 2 && { color: 'lightgrey' })}
+                clickHandler={this.handleClick}
+              />
+            ))}
           </div>
-          <div className="row">
-            {this.renderButtons('7', 'button', 'white')}
-            {this.renderButtons('8', 'button', 'white')}
-            {this.renderButtons('9', 'button', 'white')}
-            {this.renderButtons('x', 'button')}
-          </div>
-          <div className="row">
-            {this.renderButtons('4', 'button', 'white')}
-            {this.renderButtons('5', 'button', 'white')}
-            {this.renderButtons('6', 'button', 'white')}
-            {this.renderButtons('-', 'button')}
-          </div>
-          <div className="row">
-            {this.renderButtons('1', 'button', 'white')}
-            {this.renderButtons('2', 'button', 'white')}
-            {this.renderButtons('3', 'button', 'white')}
-            {this.renderButtons('+', 'button')}
-          </div>
-          <div className="row">
-            {this.renderButtons('0', 'button', 'white', true)}
-            {this.renderButtons('.', 'button', 'white')}
-            {this.renderButtons('=', 'button')}
-          </div>
-        </div>
+        ))}
       </div>
     );
   }
 }
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+};
 
 export default ButtonPanel;

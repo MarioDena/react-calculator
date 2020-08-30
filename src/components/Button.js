@@ -4,35 +4,39 @@ import PropTypes from 'prop-types';
 class Button extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-    };
+  handleClick() {
+    const { name, clickHandler } = this.props;
+    clickHandler(name);
   }
 
   render() {
-    const { value } = this.props;
-    const { buttonStyle } = this.props;
-    const { color } = this.props;
-    const { wide } = this.props;
+    const { name, color, wide } = this.props;
+    const style = { backgroundColor: color };
+    if (wide) style.width = 136;
 
     return (
-      <button className={`${buttonStyle} ${color} ${wide}`} type="submit">
-        {value}
+      <button
+        type="button"
+        style={style}
+        onClick={this.handleClick}
+      >
+        {name}
       </button>
     );
   }
 }
 
 Button.propTypes = {
-  value: PropTypes.string,
-  buttonStyle: PropTypes.string,
+  name: PropTypes.string.isRequired,
   color: PropTypes.string,
   wide: PropTypes.bool,
+  clickHandler: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
-  value: '0',
-  buttonStyle: 'button',
   color: 'orange',
   wide: false,
 };
