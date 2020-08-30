@@ -25,6 +25,7 @@
   border-top: none;
   box-sizing: border-box;
   display: flex;
+  flex-direction: row;
   width: 700px;
   height: 500px;
   border: 1px solid lightgrey;
