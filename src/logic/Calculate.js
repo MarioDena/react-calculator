@@ -7,7 +7,7 @@ const calculate = ({ total, next, operation }, buttonName) => {
 
   if (operations.includes(buttonName)) {
     operation = buttonName;
-    total = (total !== null && next !== null) ? operate(total, next, operation) : total || "0";
+    total = (total !== null && next !== null) ? operate(total, next, operation) : "0" || next;
   } else if (buttonName === '=' && total && next) {
     total = operation ? operate(total, next, operation) : total = next;
     operation = null;
