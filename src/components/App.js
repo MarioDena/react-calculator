@@ -3,6 +3,7 @@ import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import '../App.css';
 import calculate from '../logic/Calculate';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +29,7 @@ class App extends React.Component {
         return { next };
       });
     } else {
-      this.setState((state) => calculate(state, buttonName));
+      this.setState(state => calculate(state, buttonName));
     }
   }
 
@@ -36,7 +37,7 @@ class App extends React.Component {
     const { next, total } = this.state;
     return (
       <div className="App">
-        <Display value={(next || total || 0).toString()}/>
+        <Display value={ (next || total || 0).toString() } />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );

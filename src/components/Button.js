@@ -13,10 +13,11 @@ class Button extends React.Component {
   }
 
   render() {
-    const {buttonStyle, name, color, wide } = this.props;
+    const { buttonStyle, name, color, wide } = this.props;
 
     return (
       <button
+        type="button"
         className={`${buttonStyle} ${color} ${wide}`}
         onClick={this.handleClick}
       >
@@ -37,6 +38,7 @@ Button.propTypes = {
 Button.defaultProps = {
   color: 'orange',
   wide: false,
+  buttonStyle: 'button',
 };
 
 export default Button;

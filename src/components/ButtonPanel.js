@@ -1,6 +1,7 @@
+// eslint-disable jsx-props-no-spreading //
 import React from 'react';
-import Button from './Button';
 import PropTypes from 'prop-types';
+import Button from './Button';
 
 const buttons = [
   ['AC', '+/-', '%', '÷'],
@@ -24,13 +25,13 @@ class ButtonPanel extends React.Component {
   render() {
     return (
       <div className="button-panel">
-         <div className="number-panel">
-          {buttons.map((row, i) => (
-            <div className="row">
+          <div className="number-panel">
+           {buttons.map((row, i) => (
+            <div key={row} className="row">
               {row.map((b, j) => (
                 <Button
                   key={b}
-                  buttonStyle='button'
+                  buttonStyle="button"
                   name={b}
                   value={b}
                   {...(b === '0' && { wide: true })}
@@ -40,8 +41,8 @@ class ButtonPanel extends React.Component {
                 />
               ))}
             </div>
-          ))}
-        </div>
+            ))}
+          </div>
       </div>
     );
   }
