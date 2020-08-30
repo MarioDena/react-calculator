@@ -1,4 +1,4 @@
-// eslint-disable jsx-props-no-spreading //
+/* eslint-disable jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
@@ -25,8 +25,8 @@ class ButtonPanel extends React.Component {
   render() {
     return (
       <div className="button-panel">
-          <div className="number-panel">
-           {buttons.map((row, i) => (
+        <div className="number-panel">
+          {buttons.map((row, i) => (
             <div key={row} className="row">
               {row.map((b, j) => (
                 <Button
