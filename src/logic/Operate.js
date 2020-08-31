@@ -15,11 +15,7 @@ const operate = (numberOne, numberTwo, operation) => {
       result = first.times(second);
       break;
     case '÷':
-      try {
-        result = first.div(second);
-      } catch (error) {
-        result = Big(0);
-      }
+      second === 0 ? result = NaN : result = first.div(second)
       break;
     case '%':
       result = first.times(second.div(100));
