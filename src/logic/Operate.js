@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
@@ -15,7 +16,7 @@ const operate = (numberOne, numberTwo, operation) => {
       result = first.times(second);
       break;
     case '÷':
-      second === 0 ? result = NaN : result = first.div(second)
+      second === 0 ? result = 0 : result = first.div(second);
       break;
     case '%':
       result = first.times(second.div(100));
